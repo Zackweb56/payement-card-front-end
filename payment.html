@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+    <title>payment methods</title>
+</head>
+<body>
+    <h1>information de payment</h1>
+    <div class="form">
+        <div class="nom">
+            <label for="name">nom et prenom</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="adresse">
+            <label for="adresse">adresse</label>
+            <input type="text" name="adresse" id="adresse">
+        </div>
+        <div class="tele">
+            <label for="tele">telephone(+212)</label>
+            <input type="text" name="tele" id="tele">
+        </div>
+        <div class="type-payment">
+            <div class="paypal">
+                <input type="radio" name="type-payment" id="paypal" checked onclick="changePay()"><img src="images/paypal.svg" alt="paypal" id="py">
+            </div>
+            <div class="visa">
+                <input type="radio" name="type-payment" id="visa" onclick="changePay()"><img src="images/visa-credit-card.svg" alt="" srcset="">
+                <img src="images/mastercard.svg" alt="">
+            </div>
+        </div>
+        <div class="info-paypal">
+            <div class="email-pass">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="email-pass">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password">
+            </div>
+        </div>
+        <div class="info-visa" style="display: none;">
+            <label for="type-carte">type de la carte</label>
+            <select name="type-carte" id="type-carte">
+                <option value="choisir" selected hidden>choisir</option>
+                <option value="choisir" >Visa</option>
+                <option value="choisir" >mastercard</option>
+            </select>
+            <div class="num-carte">
+                <label for="num-carte">Numero de la carte</label>
+                <input type="text" name="num-carte" id="num-carte">
+            </div>
+            <div class="expire">
+                <label for="date-expe">experation fin</label>
+                <input type="number" name="expire" id="month" placeholder="month">
+                <input type="number" name="expire" id="year" placeholder="year">
+            </div>
+            <div class="verification">
+                <label for="check">code de vérification</label>
+                <input type="text" name="check" id="code-verification">
+            </div>
+        </div>
+        <div class="butns">
+            <button id="valider" onclick="validate()">valider</button>
+            <button id="effacer">effacer</button>
+        </div>
+    </div>
+    <div id="block_er"></div>
+    <div id="info"></div>
+    <script src="payment.js"></script>
+    
+</body>
+</html>
